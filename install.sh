@@ -47,6 +47,12 @@ export NVM_DIR="$HOME/.nvm"
 source ~/.bashrc
 nvm install 11
 
+/* Web server permissions stuff */
+
+sudo adduser $USER www-data
+
+sudo chown $USER:www-data -R /var/www
+
 /* RESTART SERVICES */
 sudo nginx -t
 sudo systemctl reload nginx
